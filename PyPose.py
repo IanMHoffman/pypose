@@ -355,7 +355,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA)
     def OnTimer(self, e=None):
         self.timeout = self.timeout + 1
         if self.timeout > 50:
-            self.sb.SetBackgroundColour(wx.NullColor)
             self.sb.SetStatusText("",0)
             self.sb.Refresh()
             self.timeout = 0
@@ -383,7 +382,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA)
 # New Project Dialog
 class NewProjectDialog(wx.Dialog):
     def __init__(self, parent, id, title):
-        wx.Dialog.__init__(self, parent, id, title, size=(310, 180))  
+        wx.Dialog.__init__(self, parent, id, title, size=(350, 220))  
 
         panel = wx.Panel(self, -1)
         vbox = wx.BoxSizer(wx.VERTICAL)
@@ -397,8 +396,8 @@ class NewProjectDialog(wx.Dialog):
         self.resolution =  wx.ComboBox(panel, -1, '1024', (105, 75), choices=['1024','4096'])
 
         hbox = wx.BoxSizer(wx.HORIZONTAL)
-        okButton = wx.Button(self, wx.ID_OK, 'Ok', size=(70, 30))
-        closeButton = wx.Button(self, wx.ID_CANCEL, 'Close', size=(70, 30))
+        okButton = wx.Button(self, wx.ID_OK, 'Ok', size=(60, 30))
+        closeButton = wx.Button(self, wx.ID_CANCEL, 'Close', size=(60, 30))
         hbox.Add(okButton, 1)
         hbox.Add(closeButton, 1, wx.LEFT, 5)
 
